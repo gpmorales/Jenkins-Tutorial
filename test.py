@@ -1,1 +1,1 @@
-print("Built Project!")
+print("Building Project!")
