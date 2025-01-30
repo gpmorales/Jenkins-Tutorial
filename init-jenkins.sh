@@ -5,10 +5,11 @@ docker build -t myjenkins-blueocean:latest .
 docker network create jenkins
 
 # Run Jenkins with Blueocean UI
+# Note: replace the DOCKER_HOST with the proxy containers IP address and internal port
 docker run --name jenkins-blueocean --restart=on-failure --detach \
   --network jenkins \
   --env DOCKER_HOST="tcp://172.18.0.3:2375" \
-  --env DOCKER_TLS_VERIFY="0" \
+  --env DOCKER_TLS_VERIFY="" \
   --env DOCKER_CERT_PATH="" \
   --volume jenkins-data:/var/jenkins_home \
   --publish 8080:8080 --publish 50000:50000 \
