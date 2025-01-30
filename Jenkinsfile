@@ -1,8 +1,11 @@
 pipeline {
     agent { 
         docker {
-            image 'devopsjourney1/myjenkinsagents:python'
+            image 'demisto/python3:3.12.8.1983910'
         }
+    }
+    environment {
+        DOCKER_HOST = "tcp://172.18.0.3:2375"
     }
     triggers {
         pollSCM('H/5 * * * *')
