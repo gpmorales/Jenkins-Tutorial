@@ -2,7 +2,6 @@ pipeline {
     agent { 
         node {
             label 'docker-python-agent'
-            reuseNode true
         }
     }
     triggers {
@@ -18,7 +17,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo "Executing Testing stage."s
+                echo "Executing Testing stage."
                 sh "echo 'Running unit tests...'"
             }
         }
