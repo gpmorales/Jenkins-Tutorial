@@ -1,6 +1,7 @@
 pipeline {
     environment {
         DOCKER_HOST = "tcp://172.18.0.3:2375"
+        DOCKER_TLS_VERIFY = "0"
     }
     agent { 
         docker {
