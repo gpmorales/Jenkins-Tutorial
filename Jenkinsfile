@@ -5,7 +5,7 @@ pipeline {
             reuseNode true
         }
     }
-    trigger {
+    triggers {
         pollSCM('H/5 * * * *')
     }
     stages {
@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo "Executing Testing stage."
+                echo "Executing Testing stage."s
                 sh "echo 'Running unit tests...'"
             }
         }
