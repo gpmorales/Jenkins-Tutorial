@@ -1,7 +1,7 @@
 pipeline {
     agent { 
         docker {
-            image 'demisto/python3:3.12.8.1983910'
+            image 'devopsjourney1/myjenkinsagents:python'
         }
     }
     triggers {
